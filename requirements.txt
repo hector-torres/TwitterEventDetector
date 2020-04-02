@@ -1,0 +1,9 @@
+psycopg2==2.7.5
+spacy==2.2.3
+gensim
+numpy
+scipy
+ipython
+scikit-learn
+joblib
+pandas
