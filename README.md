@@ -1,28 +1,14 @@
-# Tweet Summarizer
+# Feature Extractor
 
 ## Overview
 
-Takes data from a database of tweets from selected sources, then pre-processes them in order 
-to run natural language processing tools in order to summarize them. This application has two notebooks,
-with different methods to process tweets:
+Uses NLP tools to extract entities and features from tweet data
 
-1. the Rule Based Summarizer
-2. the Supervised Learning Summarizer
+### How It Works
 
-This application is designed to summarize _individual_ tweets and prepare them for further analysis for actual 
-event extraction.
-
-### The Rule Based Summarizer
-
-This summarizer simply extracts parts of speech from tweet text using the spaCy NLP library's built-in 
+This summarizer extracts parts of speech from tweet text using the spaCy NLP library's built-in 
 models. 
 
-### The Supervised Learning Summarizer (in progress)
-
-This summarizer uses spaCy for initial text processing, but then uses machine learning techniques to extract 
-further data from each tweet. 
-
-*Requires More Data*
 
 ## Application Suite
 
@@ -31,8 +17,11 @@ and extract event data from them. The end result of this (in progress) research 
 of news-worthy event summaries that is generated in real-time as tweets are produced. As of now, 
 this suite consists of the following applications:
 
-* The Tweet Summarizer (_this application_)
-* The Tweet Categorizer
-    * Once individual tweets are summarized, this application will categorize tweets based on (TBD) criteria.
-* The Event Visualizer
-    * This will take event data and show it in a UI, with geolocation and tabular data viz. 
+* The Tweet Collector
+* The Feature Extractor (_this application_)
+    * Uses NLP tools to extract entities and features from tweet data
+* The Newsworthiness Detector
+    * Compares extracted tweet features against a corpus of headlines, verified news tweets, etc., 
+    using machine learning tools to detect newsworthy “events”
+* The Event Dashboard
+    * Shows detected events on a UI, plotting them on a map and showing them in a table in real-time
