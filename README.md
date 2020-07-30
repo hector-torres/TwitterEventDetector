@@ -1,27 +1,22 @@
-# Feature Extractor
-
+Twitter Event Detector
+===
 ## Overview
-
-Uses NLP tools to extract entities and features from tweet data
+The Twitter Event Collector is an application that automatically ingests tweets from 
+selected sources, filters them for newsworthiness, extracts newsworthy features from them, 
+categories news events from these features, then shares this data via a dashboard and API. 
 
 ### How It Works
+The Twitter Event Detector contains the following jobs, each correalting with a s specific 
+part of the event detection process. 
 
-This summarizer extracts parts of speech from tweet text using the spaCy NLP library's built-in 
-models. 
-
-
-## Application Suite
-
-This application is part of a testbed suite to take data from microblogs (in this case, Twitter) 
-and extract event data from them. The end result of this (in progress) research project is to have an output 
-of news-worthy event summaries that is generated in real-time as tweets are produced. As of now, 
-this suite consists of the following applications:
-
-* The Tweet Collector
-* The Feature Extractor (_this application_)
-    * Uses NLP tools to extract entities and features from tweet data
-* The Newsworthiness Detector
-    * Compares extracted tweet features against a corpus of headlines, verified news tweets, etc., 
-    using machine learning tools to detect newsworthy “events”
-* The Event Dashboard
-    * Shows detected events on a UI, plotting them on a map and showing them in a table in real-time
+#### The Tweet Collector
+Automatically ingests tweets and saves them to persistent storage.
+#### The Newsworthiness Filter
+Compares extracted tweet features against a corpus of headlines, verified news tweets, 
+etc., using machine learning tools to detect newsworthy “events”
+#### The Feature Extractor
+Uses extracted features in order to try to categorize tweets based on a select number 
+of news categories, with varying levels of importance assigned to each category. 
+#### The Event Dashboard
+Shows detected events in a UI that allows the user to select, filter, and parse events by 
+location, time, or event type. 
