@@ -3,7 +3,7 @@ spacy==2.2.3
 gensim==3.8.1
 numpy==1.18.2
 scipy==1.4.1
-ipython==7.13.0
+ipython==7.16.3
 scikit-learn==0.22.2post1
 joblib==0.14.1
 pandas==1.0.3
